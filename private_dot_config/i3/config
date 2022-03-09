@@ -13,8 +13,6 @@
 
 set $mod Mod3
 
-set $testvar "test"
-
 # colors
 set $bg-color            #285577
 set $in-bg-color   	 #5f676a
