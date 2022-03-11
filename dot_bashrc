@@ -120,6 +120,7 @@ alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/Sh
 export DENO_INSTALL="/home/marxy/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="${PATH}:${HOME}/.local/bin/"
 
 source $HOME/complete_alias
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
