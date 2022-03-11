@@ -8,7 +8,7 @@
 #define GRADIENT 45
 /* Color definition. By default this is a gradient formed by mixing two colors.
    `pos` represents the pixel position relative to the visualizer baseline. */
-#define COLOR @fg:mix(#97909E, #D1D0D0, clamp(pos / GRADIENT, 0, 1))
+#define COLOR @fg:mix(#904D63, #D0AEB8, clamp(pos / GRADIENT, 0, 1))
 /* 1 to draw outline, 0 to disable */
 #define DRAW_OUTLINE 0
 /* 1 to draw edge highlight, 0 to disable */
