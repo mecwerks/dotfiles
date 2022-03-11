@@ -15,6 +15,18 @@ mon2cam
 
 complete_alias
 
+glava
+
+polybar
+
+pywal
+
+pywal-discord
+
+BetterDiscord
+
+polybar-themes
+
 # fonts
 
 Fantasque Sans Mono
