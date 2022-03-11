@@ -34,7 +34,7 @@
 
 /* Factor used to scale frequencies. Lower values allows lower
    frequencies to occupy more space. */
-#define SAMPLE_SCALE 8
+#define SAMPLE_SCALE 6
 
 /* The frequency range to sample. 1.0 would be the entire FFT output,
    and lower values reduce the displayed frequencies in a log-like

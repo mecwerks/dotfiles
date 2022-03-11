@@ -3,6 +3,10 @@
 dir="$HOME/.config/polybar"
 themes=(`ls --hide="launch.sh" $dir`)
 
+source $HOME/.cache/wal/colors.sh
+
+export barbg_alpha="#aa${color1/'#'}"
+
 launch_bar() {
 	# Terminate already running bar instances
 	killall -q polybar

@@ -125,3 +125,4 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 source $HOME/complete_alias
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 complete -F _complete_alias dot
+

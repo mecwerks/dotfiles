@@ -13,21 +13,22 @@
 
 set $mod Mod3
 
-# colors
-set $bg-color            #285577
-set $in-bg-color   	 #5f676a
-set $text-color          #f3f4f5
-set $in-text-color 	 #676E7D
-set $urgent-bg-color     #E53935
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
 
-# class                 border  backgr.      text           indicator child_border
-client.focused          #4c7899 $bg-color    $text-color    #2e9ef4   $bg-color
-client.focused_inactive #333333 $in-bg-color $text-color    #484e50   #5f676a
-client.unfocused        #333333 #222222      $in-text-color #292d2e   #222222
-client.urgent           #2f343a #900000      $text-color    #900000   #900000
-client.placeholder      #000000 #0c0c0c      $text-color    #000000   #0c0c0c
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-client.background       #ffffff
+client.background       $bg
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -211,6 +212,7 @@ set $monitor_right DVI-D-0
 
 # custom binds
 bindsym $mod+shift+x exec i3lock
+bindsym $mod+shift+o exec --no-startup-id "sh -c '~/.scripts/pclightsoff.sh'"
 
 # Multi-screen screenshots with scrot
 bindsym --release Print exec escrotum 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
@@ -221,12 +223,10 @@ bindsym --release Shift+Print exec escrotum -s 'screenshot_%Y%m%d_%H%M%S.png' -e
 # autostart
 exec compton 
 exec_always --no-startup-id "sh -c '~/.config/polybar/launch.sh --forest'"
-exec --no-startup-id "sh -c 'sleep 10; exec mon2cam'"
 exec brave-browser
 exec discord
 
-# stuff
-exec_always feh --bg-fill /home/marxy/Pictures/Wallpapers/kurone_mono.jpg
+exec_always --no-startup-id "sh -c '~/.scripts/wallpaper.sh'" 
 exec_always xrandr --output $monitor_right --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output $monitor_left --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --off
 
 # workspace assignment
